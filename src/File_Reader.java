@@ -10,29 +10,24 @@ import java.util.regex.Pattern;
 public class File_Reader {
     public BufferedReader reader;
     public List<Node> nodes;
-    public File_Reader(String file) throws IOException {
-       try{ this.reader = new BufferedReader(new FileReader(file));
-           this.nodes = stateReader();}
-        catch (IOException e){
-           reader.close();
-        }
-        finally {
-           reader.close();
-       }
-    }
 
-    public List<Node> stateReader() throws IOException {
-        String line = "";
-        List<Node> list = new ArrayList<>();
-        while((line = reader.readLine()) != null){
-            System.out.println(line);
-            Pattern p = Pattern.compile("( \\d+)");
-            Matcher m = p.matcher(line);
-            if (m.find()){
-                Node node = new Node(m.group().trim());
-                list.add(node);
+    public File_Reader(String file) {
+        try {
+            this.reader = new BufferedReader(new FileReader(file));
+            String line = "";
+            nodes = new ArrayList<>();
+            while ((line = reader.readLine()) != null) {
+//                System.out.println(line);
+                Pattern p = Pattern.compile("( \\d+)");
+                Matcher m = p.matcher(line);
+                if (m.find()) {
+                    Node node = new Node(m.group().trim());
+                    nodes.add(node);
+                }
             }
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return list;
     }
 }

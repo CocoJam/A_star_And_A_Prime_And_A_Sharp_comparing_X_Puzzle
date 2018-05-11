@@ -8,4 +8,10 @@ public class Manhattan_Distance implements Heuristics{
         }
         return sum;
     }
+
+    public static void main(String[] args) {
+        Node goal = new Node(801234567);
+        Node init = new Node(354107268);
+        System.out.println((new Manhattan_Distance().compute(goal.puzzle,init.puzzle)));
+    }
 }

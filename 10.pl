@@ -1,6 +1,6 @@
-problems(10, 642510837). 
-problems(10, 453107268). 
-problems(10, 230564871). 
+problems(10, 642510837).
+problems(10, 453107268).
+problems(10, 230564871).
 problems(10, 602741538). 
 problems(10, 632510874). 
 problems(10, 207135468). 
@@ -22,4 +22,4 @@ problems(10, 032548761).
 problems(10, 830265741). 
 problems(10, 805142736). 
 problems(10, 413276508). 
-problems(10, 035162874). 
+problems(10, 035162874).
